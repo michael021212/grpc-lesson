@@ -31,7 +31,7 @@ type server struct {
 func (*server) ListFiles(ctx context.Context, req *pb.ListFilesRequest) (*pb.ListFilesResponse, error) {
 	fmt.Println("ListFiles was invoked")
 
-	dir := "/Users/tanakashun/Desktop/udemy-grpc/grpc-lesson/storage"
+	dir := "/Users/*****************/Desktop/udemy-grpc/grpc-lesson/storage"
 
 	paths, err := os.ReadDir(dir)
 	if err != nil {
@@ -61,7 +61,7 @@ func (*server) Download(req *pb.DownloadRequest, stream pb.FileService_DownloadS
 
 	// .protoファイルにより生成されたGetFilenameメソッドを使う
 	filename := req.GetFilename()
-	path := "/Users/tanakashun/Desktop/udemy-grpc/grpc-lesson/storage/" + filename
+	path := "/Users/*****************/Desktop/udemy-grpc/grpc-lesson/storage/" + filename
 
 	// ファイルの存在チェック
 	if _, err := os.Stat(path); os.IsNotExist(err) {

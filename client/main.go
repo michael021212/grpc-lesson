@@ -18,7 +18,7 @@ import (
 
 func main() {
 	// SSL通信のための実装
-	certFile := "/Users/tanakashun/Library/Application Support/mkcert/rootCA.pem"
+	certFile := "/Users/*****************/Library/Application Support/mkcert/rootCA.pem"
 	creds, err := credentials.NewClientTLSFromFile(certFile, "")
 	// サーバーとの接続を確立する
 	// WithInsecureは通信が暗号化されないので本番では使わない
@@ -35,9 +35,9 @@ func main() {
 	client := pb.NewFileServiceClient(conn)
 
 	// callListFiles(client) // Unary RPC のケース
-	callDownload(client) // サーバーストリーミングのケース
+	// callDownload(client) // サーバーストリーミングのケース
 	// callUpload(client) // クライアントストリーミングのケース
-	// callUploadAndNotifyProgress(client) // 双方向ストリーミングのケース
+	callUploadAndNotifyProgress(client) // 双方向ストリーミングのケース
 }
 
 // pb.FileServiceClient型のclientを引数に受け取り、
@@ -99,7 +99,7 @@ func callDownload(client pb.FileServiceClient) {
 
 func callUpload(client pb.FileServiceClient) {
 	filename := "sports.txt"
-	path := "/Users/tanakashun/Desktop/udemy-grpc/grpc-lesson/storage/" + filename
+	path := "/Users/*****************/Desktop/udemy-grpc/grpc-lesson/storage/" + filename
 
 	file, err := os.Open(path)
 	if err != nil {
@@ -146,7 +146,7 @@ func callUpload(client pb.FileServiceClient) {
 
 func callUploadAndNotifyProgress(client pb.FileServiceClient) {
 	filename := "sports.txt"
-	path := "/Users/tanakashun/Desktop/udemy-grpc/grpc-lesson/storage/" + filename
+	path := "/Users/*****************/Desktop/udemy-grpc/grpc-lesson/storage/" + filename
 
 	file, err := os.Open(path)
 	if err != nil {
