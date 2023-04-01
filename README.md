@@ -10,3 +10,5 @@ $ go run client/main.go
 - callDownload(client) // サーバーストリーミングのケース。分割ダウンロード
 - callUpload(client) // クライアントストリーミングのケース。分割アップロード
 - callUploadAndNotifyProgress(client) // 双方向ストリーミングのケース。分割アップロードと進捗のレスポンス
+
+(注意)パスを伏せ字にしている
